@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Recreational Cricket League</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <loading>
+        <svg class="animate-spin h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V4a10 10 0 00-10 10h2zm2 8a8 8 0 018-8h2a10 10 0 00-10-10v2zm8 2a8 8 0 01-8-8h-2a10 10 0 0010 10v-2zm-8-2a8 8 0 018-8v-2a10 10 0 00-10 10h2z"></path>
+        </svg>
+    </loading>
+    <header class="bg-blue-700 text-white p-6 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-extrabold">New York Recreational Cricket League</h1>
+                <p class="mt-2 text-lg">Join us to experience the thrill of cricket right in the heart of New York City!</p>
+            </div>
+            <div class="hidden md:block">
+                <a href="#" class="inline-block bg-white text-blue-700 font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-100 transition duration-300">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-md sticky top-0 z-20">
+        <ul class="flex justify-center space-x-4 p-4">
+            <li><a href="#about" data-target="about" class="nav-link text-blue-600 hover:underline">About the League</a></li>
+            <li><a href="#location" data-target="location" class="nav-link text-blue-600 hover:underline">Location of Games</a></li>
+            <li><a href="#schedule" data-target="schedule" class="nav-link text-blue-600 hover:underline">Season Schedule</a></li>
+        </ul>
+    </nav>
+
+    <main class="relative h-screen">
+        <section id="about" class="page visible-page absolute inset-0 p-8 bg-white flex flex-col items-center space-y-4">
+            <div class="bg-cricket w-full h-64 rounded-lg shadow-md"></div>
+            <h2 class="text-2xl font-bold">About the League</h2>
+            <p class="text-center max-w-prose">The New York Recreational Cricket League (NYRCL) is dedicated to promoting the sport of cricket among New Yorkers of all ages. We offer a friendly but competitive environment where players can improve their skills and enjoy the game.</p>
+        
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+                <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="card-content">
+                        <i class="fas fa-users text-4xl text-blue-700 mb-4"></i>
+                        <h3 class="text-xl font-semibold">Community</h3>
+                        <p>Join a diverse community of cricket enthusiasts and make new friends.</p>
+                    </div>
+                </div>
+                <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="card-content">
+                        <i class="fas fa-trophy text-4xl text-yellow-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">Competitions</h3>
+                        <p>Participate in friendly yet competitive matches and tournaments.</p>
+                    </div>
+                </div>
+                <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="card-content">
+                        <i class="fas fa-chalkboard-teacher text-4xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">Coaching</h3>
+                        <p>Improve your skills with guidance from experienced coaches.</p>
+                    </div>
+                </div>
+                <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="card-content">
+                        <i class="fas fa-calendar-alt text-4xl text-purple-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">Events</h3>
+                        <p>Join us for various events throughout the season, including social gatherings and workshops.</p>
+                    </div>
+                </div>
+                <div class="card bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="card-content">
+                        <i class="fas fa-heart text-4xl text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">Passion</h3>
+                        <p>Experience the thrill and passion of cricket in the heart of New York City.</p>
+                    </div>
+                </div>
+                <div class="card bg-white p-6 rounded-lg shadow-lg text-center relative">
+                    <div class="card-content">
+                        <i class="fas fa-handshake text-4xl text-teal-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold">Join Us</h3>
+                        <p>Learn about membership options and how to become a part of our league.</p>
+                    </div>
+                    <div class="more-info">
+                        <a href="#" onclick="openDialog()" class="text-blue-600 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Membership Info Dialog -->
+                <div id="membership-dialog" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 hidden">
+                    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
+                        <h2 class="text-2xl font-bold mb-4">Membership Information</h2>
+                        <p class="mb-4">Becoming a member of the New York Recreational Cricket League offers you numerous benefits. Here’s what you need to know:</p>
+                        
+                        <h3 class="text-xl font-semibold mb-2">Membership Benefits:</h3>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>Access to all league matches and tournaments throughout the season.</li>
+                            <li>Opportunity to participate in special events and social gatherings.</li>
+                            <li>Discounted rates on additional training sessions and workshops.</li>
+                            <li>Membership-exclusive updates and newsletters about league activities.</li>
+                        </ul>
+                        
+                        <button onclick="startCalculation()" class="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
+                            Calculate Your Fees
+                        </button>
+                        <button onclick="closeDialog()" class="mt-4 px-4 py-2 bg-gray-500 text-white rounded-lg shadow hover:bg-gray-600">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+
+        <section id="join" class="page hidden-page absolute inset-0 p-8 bg-white flex flex-col justify-center items-center space-y-4">
+            <h2 class="text-2xl font-bold">How to Join</h2>
+            <p>Interested in playing? We welcome players of all skill levels! To join, simply fill out our online registration form on our website, or contact us at join@nyrcl.com for more details.</p>
+        </section>
+
+        <section id="fees" class="page hidden-page absolute inset-0 p-8 bg-white flex flex-col justify-center items-center space-y-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4"><i class="fas fa-dollar-sign mr-2"></i>League Fees</h2>
+            <p class="text-gray-600 text-center">The registration fee for the league is $150 per player, which covers the entire season. This fee includes uniforms, equipment rental, and insurance.</p>
+            <button onclick="startCalculation()" class="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
+                Calculate Your Fees
+            </button>
+            
+        </section>
+
+        <section id="location" class="page hidden-page absolute inset-0 p-8 bg-white flex flex-col justify-center items-center space-y-4">
+            <h2 class="text-2xl font-bold">Location of Games</h2>
+            <p>All games are held at the iconic Central Park Cricket Fields, located near the north end of Central Park, easily accessible via public transportation.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div class="card bg-gray-100 p-4 rounded-lg shadow-md">
+                    <div class="card-content">
+                        <h3 class="text-xl font-bold">Central Park Cricket Fields</h3>
+                        <p>Located near the north end of Central Park, the cricket fields are easily accessible via public transportation.</p>
+                    </div>
+                    <div class="more-info">
+                        <a href="#" class="text-blue-600 hover:underline">More Info</a>
+                    </div>
+                </div>
+                <div class="card bg-gray-100 p-4 rounded-lg shadow-md">
+                    <div class="card-content">
+                        <h3 class="text-xl font-bold">Public Transportation</h3>
+                        <p>Take the subway to the 110th Street station, or the M4 bus to the Central Park North stop.</p>
+                    </div>
+                    <div class="more-info">
+                        <a href="#" class="text-blue-600 hover:underline">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="page hidden-page p-8 bg-white rounded-lg shadow-lg flex flex-col justify-center items-center space-y-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4"><i class="fas fa-calendar-alt mr-2"></i>Season Schedule</h2>
+            <p class="text-gray-600 text-center">The NYRCL season runs from April through September, with games typically held on weekends. Here is the schedule for the upcoming season:</p>
+            <div class="mt-4 space-y-4 w-full">
+                <div class="bg-blue-50 rounded-lg shadow-md p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-700">Opening Day: April 15th</h3>
+                        <p class="text-blue-600">Start the season with excitement!</p>
+                    </div>
+                    <button onclick="showDetails('Opening Day', 'April 15th')" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+                <div class="bg-green-50 rounded-lg shadow-md p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-semibold text-green-700">Mid-Season Tournament: July 8th-9th</h3>
+                        <p class="text-green-600">A thrilling mid-season event!</p>
+                    </div>
+                    <button onclick="showDetails('Mid-Season Tournament', 'July 8th-9th')" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+                <div class="bg-orange-50 rounded-lg shadow-md p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-semibold text-orange-700">Season Finals: September 20th</h3>
+                        <p class="text-orange-600">The climax of the season!</p>
+                    </div>
+                    <button onclick="showDetails('Season Finals', 'September 20th')" class="px-4 py-2 bg-orange-500 text-black rounded-lg shadow hover:bg-orange-600">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+                <div class="bg-red-50 rounded-lg shadow-md p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-semibold text-red-700">Closing Ceremony: September 30th</h3>
+                        <p class="text-red-600">Celebrate the end of the season!</p>
+                    </div>
+                    <button onclick="showDetails('Closing Ceremony', 'September 30th')" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white p-6 mt-auto flex flex-col items-center">
+        <p>Contact Us: </p>
+        <p>Email: info@nyrcl.com | Phone: (555) 123-4567</p>
+        <p>Follow us on our social media pages for updates and more information.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

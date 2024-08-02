@@ -1,0 +1,117 @@
+header, nav {
+    z-index: 10000; 
+}
+
+#membership-dialog .visible{
+    visibility: visible;
+    z-index: 10000;
+}
+
+.page {
+    transition: opacity 0.5s ease-in-out, z-index 0.5s ease-in-out;
+}
+.hidden-page {
+    opacity: 0;
+    z-index: -1;
+}
+.visible-page {
+    opacity: 1;
+    z-index: 10;
+}
+.bg-cricket {
+    background-image: url('https://cdn.pixabay.com/photo/2022/02/16/04/15/cricketer-7015983_640.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+loading svg{
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#location .card {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+#location .card-content {
+    transition: all 0.3s ease-in-out;
+}
+#location .card:hover .card-content {
+    opacity: 0;
+}
+#location .card:hover .more-info {
+    opacity: 1;
+}
+#location .more-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: large;
+}
+
+#location .card:hover {
+    animation: heartbeat 1s infinite;
+}
+
+#about .card {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+#about .card:hover i{
+    animation: spinonce 1s linear infinite;
+}
+
+@keyframes spinonce {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes heartbeat {
+    /*red and black smooth transition*/
+    0% {
+        background-color: #493535;
+    }
+    50% {
+        background-color: #573535;
+    }
+    100% {
+        background-color: #711e1e;
+    }
+}
